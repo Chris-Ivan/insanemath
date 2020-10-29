@@ -1,0 +1,76 @@
+@import './variable';
+@import './mixin';
+
+.container{
+    border : 1px solid #000;
+    border-radius: 16px;
+    padding : 2vw;
+}
+
+.soal,.options, .skip{
+    padding : 1vh;
+    border-radius: 16px;
+}
+
+.skip,.soal{
+    background-color: $p_color2;
+}
+
+.soal{
+    @include setup_size(100%,40%);
+    @include flex_center(column);
+    text-align: center;
+}
+
+.text{
+    @include flex_center(row);
+    .mtx{
+        float : left;
+        margin : 0 10px;
+    }
+}
+
+.options{
+    @include setup_size(100%,10%);
+    @include flex_center(column);
+    align-items: flex-start;
+    background-color: $p_color1;
+    margin-top : 2vh;
+}
+
+.skip{
+    @include setup_size(50vw, 5vh);
+    @include flex_center(row);
+    position: absolute;
+    bottom : 10vw;
+    left : 50vw;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.clock{
+    @include setup_size(10vh, 10vh);
+    @include flex_center(row);
+    border-radius: 50%;
+
+    background-color: $p_color5;
+
+    position: absolute;
+    top : 10vh;
+    left : 10vw;
+    transform: translate(-25%,-50%);
+}
+
+#score, .modal-backdrop{
+    padding : 5vw;
+    @include setup_size(100vw,auto);
+}
+
+.modal-body{
+    @include flex_center(column);   
+}
+.modal-footer{
+    .options{
+        align-items: center;
+    }
+}

@@ -1,0 +1,96 @@
+SMP
+*randomMin(num) --> mengubah tanda secara random (+ ke -)
+*convertNeg(num) --> mengubah angka ke string negatif
+*notZero(num) --> jika num = 0 maka true (ga ada false)
+*notOne(num) --> jika =1 atau =-1 maka true
+spldv(x,y) --> buat persamaan spldv dari jawaban [[pers1,2],[jawaban]]
+spltv(x,y,z) --> buat persamaan spltv dari jawaban [[pers1,2,3],[jawaban]]
+*displayF(array) --> nyetak polinom x
+*perkalianPolinom(arr1,arr2) --> buat array perkalian polinom
+persGaris2Titik(point1,point2) --> dari 2 titik buat pers.linear
+*countTrig(trig,pol,val) --> itung hasil trigonometri. misal: sin(61)
+*factorial(n) --> ngitung faktorial
+*combination(num1,num2) --> ngitung kombinasi
+*permutation(num1,num2) --> ngitung permutasi
+probability_JHS(type,n) --> type: coin,dice(maks 2 dadu) [soal,jawaban]
+    ngitung peluang dapet sekian sisi dari n koin atau
+    ngitung dapet minimal sekian titik dari maks 2 dadu
+similarity(type) --> type: triangle,trapezoid,flipped [soal,jawaban], butuh gambar
+arithmetic(mode) --> mode: unit,sum,advUnit,advSum
+geometric(mode) --> mode: unit,sum
+*generateNonZero(range) --> ngembaliin angka random positif maks range
+*generateFraction() --> bikin pecahan per-10 random
+*unitArithmetic(a,b,n) --> rumus U aritmatika
+*sumArithmetic(a,b,n) --> rumus S aritmatika
+*unitGeometric(a,r,n) --> rumus U geometri
+*sumGeometric(a,r,n) --> rumus S geometri
+*sumUnlimitedGeometric(a,r) --> rumus S geometri tak hingga
+sets(mode) --> mode: and, default [soal,res]
+*filterUnique(set) -> ngecek himpunan
+inequality(level) -> nyari x
+manipulateMean(mode) --> nyari rata" nilai/berat siswa kalo ada n ga diitung.
+statistikaSDSMP(level) --> generate soal statistika sesuai level (SD,SMP)
+    SD: mean,median,modus
+    SMP: SD,std_dev,ragam
+
+SD
+standardOP(n, limit, ableNegative, level="SD") --> melakukan operasi perhitungan sederhana
+*generateOperand(level,isKurung) --> ngerandom operator
+*handleNegative(n) --> ngasih kurung kalo negatif
+*transform(number, operand, level="SD") --> generate kalimat dari soal standardOP
+*mixKurung --> buat kurung" di transform
+kpk(num1,num2) --> nyetak kpk dari 2 angka [soal,jawaban]
+fpb(num1,num2) --> nyetak fpb dari 2 angka [soal,jawaban]
+luas(shape) --> generate soal luas random sesuai input shape
+persen(decimal,frac) --> mencetak angka desimal dan pecahan dalam persen
+keliling(shape) --> generate soal luas random sesuai input shape
+konversiVolume() --> generate soal konversi [ml,l,kl]<->[cm3,dm3,m3]
+konversiPanjang() --> generate soal konversi(m)
+statistikaSDSMP(level) --> generate soal statistika sesuai level (SD,SMP)
+    SD: mean,median,modus
+    SMP: SD,std_dev,ragam
+
+function displayF(array){
+    let res = ""
+    let satuan = [``,`x`]
+    for (let i = 2; i < array.length; i++) {
+        satuan.push(`x${(i).toString().sup()}`);
+    }
+    for (i=0;i<array.length;i++){
+        if(i===0){ //digit terakhir
+            if(array[i]!==0){//kalo 0 ga dicetak
+                if (array[i]===1 || array[i]===-1){ //kalau nilainya 1
+                    if (array[i]<0){res =` - 1`+res}
+                    else {res =` +1`+ res}
+                }
+                else{ //kasus umum
+                    if (array[i]<0){res =` - ${Math.abs(array[i])}`+satuan[i]+res}
+                    else {res =` + ${array[i]}`+satuan[i]+res}
+                }
+            }
+        } else {
+            if(i===array.length-1){//pertama
+                if (array[array.length-1]===1 || array[array.length-1]===-1){
+                    if (array[i]<0){res =`- ${satuan[i]}` + res}
+                    else {res =`${satuan[i]}` + res}
+                }else{
+                    if (array[array.length-1]<0){res =` - ${Math.abs(array[array.length-1])}`+satuan[i]+res}
+                    else{res=`${Math.abs(array[array.length-1])}`+satuan[i]+res
+                    }
+                }
+            }else{
+                if(array[i]!==0){//kalo 0 ga dicetak
+                    if (array[i]===1){ //kalau nilainya 1
+                        res = ` + ${satuan[i]}` + res
+                    }
+                    else{ //kasus umum
+                        if (array[i]<0){res =` - ${Math.abs(array[i])}`+satuan[i]+res}
+                        else {res =` + ${array[i]}`+satuan[i]+res}
+                    }
+                }
+            }
+        }
+    }
+    console.log(res)
+    return res
+}

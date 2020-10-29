@@ -1,0 +1,20 @@
+@import './variable';
+
+@mixin setup_size ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex_center ($dir){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $dir;
+}
+
+@mixin add_border($rad,$width){
+    border-style: solid;
+    border-color: $p_color4;
+    border-radius: $rad;
+    border-width: $width;
+}

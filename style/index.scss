@@ -1,0 +1,209 @@
+@import './variable';
+@import './mixin';
+@import './base';
+
+
+.title,.mode,.mode-locked{
+    @include setup_size(100%, 7%);
+    @include flex_center(row);
+}
+
+.mode{
+    font-size: larger;
+    background-color: $p_color1;
+    color: $p_color4;
+    border-radius: 16px;
+    padding : 10px;
+    margin : 5px 0px;
+    @include add_border(3vh,10%)
+    position: relative;
+    &:hover{
+        cursor: pointer;
+    }
+    .bubble{
+        @include setup_size(5%,60%);
+        border-radius: 5vh;
+        background-color: $p_color5;
+        position:absolute;
+        left: 3%;
+        z-index:2;
+    }
+}
+
+.mode-locked{
+    font-size: larger;
+    background-color: $p_color2;
+    color: $p_color5;
+    border-radius: 16px;
+    padding : 10px;
+    margin : 5px 0px;
+    @include add_border(3vh,10%)
+    position: relative;
+    .locked{
+        position:absolute;
+        width: 12px;
+        left: 5%;
+        opacity: 0.5;
+    }
+}
+
+.header{
+    @include setup_size(100%, 20%);
+    @include flex_center(row);
+    .logo{
+        width: 60%;
+        max-width: 500px;
+    }
+}
+
+.footer{
+    @include setup_size(100%, 5vh);
+    @include flex_center(row);
+    align-items: flex-end;
+    position: absolute;
+    bottom : 10vw;
+    padding : 0 10vw;
+    text-align: middle;
+}
+
+.close_btn{
+    background-color: $p_color2;
+    color: $p_color5;
+    @include add_border(3vh,10%);
+    padding : 10px;
+    margin : 5px 0px;
+    width: 20%;
+    &:hover{
+        cursor: pointer;
+    }
+    color: $p_color5;
+    position: relative;
+}
+.modal_btn{
+    @include setup_size(30%, 50%);
+    @include flex_center(column);
+    background-color: $p_color2;
+    color: $p_color5;
+    border-radius: 16px;
+    padding : 5%;
+    margin : 5px 0px;
+    width: 50%;
+    font-size: large;
+    position: relative;
+    &:hover{
+        cursor: pointer;
+    }
+    .bubble{
+        @include setup_size(5%,60%);
+        border-radius: 5vh;
+        background-color: $p_color5;
+        position:absolute;
+        left: 3%;
+        z-index:2;
+    }
+}
+
+.modal-title{
+    @include setup_size(100%, 5vh);
+    @include flex_center(row);
+    font-weight: bold;
+    text-transform: uppercase;;
+}
+
+.modal-header, .modal-footer{
+    background-color: $p_color3;
+}
+
+#score{
+    @include setup_size(10vw,10vh);
+    @include flex_center(column);
+    box-sizing: border-box;
+    
+    .Button{
+        @include setup_size(100%,30%);
+        @include flex_center(column);
+        margin-bottom: 5%;
+        padding: 5%;
+        background-color: $p_color1;
+        position: relative;
+        @include add_border(3vh,10%);
+        font-size: larger;
+        .bubble{
+            @include setup_size(5%,60%);
+            border-radius: 5vh;
+            background-color: $p_color5;
+            position:absolute;
+            left: 5%;
+            z-index:2;
+        }
+    }
+}
+
+#app{
+    @include setup_size(100%,100%);
+    @include flex_center(column);
+    box-sizing: border-box;
+    .options{
+        @include setup_size(100%,30%);
+    }
+    .highscore, .play{
+        @include setup_size(100%,30%);
+        @include flex_center(column);
+        margin-bottom: 5%;
+        padding: 5%;
+        background-color: $p_color1;
+        position: relative;
+        @include add_border(3vh,10%);
+        font-size: larger;
+        .bubble{
+            @include setup_size(5%,60%);
+            border-radius: 5vh;
+            background-color: $p_color5;
+            position:absolute;
+            left: 5%;
+            z-index:2;
+        }
+    }
+    .highscore{
+        background-color: $p_color3;
+    }
+
+    form{
+        .labtext{
+            padding : 1%;
+        }
+        label,input{
+            @include setup_size(100%,auto);
+        }
+        input[type="submit"],.button{
+            @include setup_size(100%,5%);
+            @include flex_center(column);
+            padding: 5%;
+            margin-bottom: 2.5%;
+            border-radius: 16px;
+            @include add_border(3vh,10%);
+        }
+        input[type="submit"]{
+            background-color : $p_color1;
+        }
+        .button{
+            background-color : $p_color2;
+            color: $p_color5;
+            position: relative;
+            .bubble{
+                @include setup_size(5%,50%);
+                border-radius: 5vh;
+                background-color: $p_color5;
+                position:absolute;
+                left: 3%;
+                z-index:2;
+            }
+        }
+    }
+}
+
+.cekpassword{
+    border-style: solid;
+    border-color: $p_color2;
+    border-width: 10px;
+}

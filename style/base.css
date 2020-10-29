@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Janda;
+  src: url("JandaManateeSolid.ttf");
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10vh 10vw;
+  overflow: hidden;
+  font-family: "Janda";
+}
+
+@font-face {
+  font-family: "Janda";
+  src: url("JandaManateeSolid.ttf");
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.account {
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: absolute;
+  top: 5vw;
+  padding: 0 10vw;
+  text-align: right;
+}
+
+.account .button {
+  width: 30%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #FC4145;
+  color: #ffffff83;
+  position: relative;
+  border-style: solid;
+  border-color: #333333;
+  border-radius: 2vh;
+  border-width: 10%;
+}
+
+.account .button .bubble {
+  width: 5%;
+  height: 50%;
+  border-radius: 5vh;
+  background-color: #ffffff83;
+  position: absolute;
+  left: 10%;
+  z-index: 2;
+}
+
+.account .profile {
+  vertical-align: middle;
+  width: 40%;
+  height: 60%;
+  color: #333333;
+  text-align: left;
+}
+
+.account .profile-picture {
+  width: 13vw;
+  height: 13vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 100%;
+  max-height: 50%;
+  color: #ffffff83;
+}
+
+.account .profile-picture .user-default {
+  height: 100%;
+  -webkit-clip-path: circle(40% at center);
+          clip-path: circle(40% at center);
+  background-color: #FC4145;
+}
+
+.h5 {
+  size: 12px;
+}
+/*# sourceMappingURL=base.css.map */

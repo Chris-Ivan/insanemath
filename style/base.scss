@@ -1,0 +1,80 @@
+@import './variable';
+@import './mixin';
+
+*{
+    margin : 0;
+    padding : 0;
+}
+div{
+    box-sizing: border-box;
+}
+
+@font-face { font-family: Janda; src: url('JandaManateeSolid.ttf'); }
+
+body{
+    @include setup_size(100vw, 100vh);
+    box-sizing: border-box;
+    padding : 10vh 10vw;
+    overflow: hidden;
+    font-family: "Janda";
+}
+
+@font-face { 
+	font-family: "Janda"; 
+	src: url('JandaManateeSolid.ttf'); 
+}
+
+.container{
+    @include setup_size(100%,100%);
+    @include flex_center(column);
+}
+
+.account{
+    @include setup_size(100%, 10vh);
+    @include flex_center(row);
+    align-items: flex-end;
+    position: absolute;
+    top : 5vw;
+    padding : 0 10vw;
+    text-align: right;
+
+    .button{
+        @include setup_size(30%, 50%);
+        @include flex_center(column);
+        background-color: $p_color2;
+        color: $p_color5;
+        position: relative;
+        @include add_border(2vh,10%);
+        .bubble{
+            @include setup_size(5%,50%);
+            border-radius: 5vh;
+            background-color: $p_color5;
+            position:absolute;
+            left: 10%;
+            z-index:2;
+        }
+    }
+    .profile{
+        vertical-align: middle;
+        @include setup_size(40%, 60%);
+        color: $p_color4;
+        text-align: left;
+    }
+    
+    .profile-picture{
+        @include setup_size(13vw, 13vh);
+        @include flex_center(column);
+        max-width: 100%;
+        max-height: 50%;
+        color: $p_color5;
+        .user-default{
+            height: 100%;
+            clip-path: circle(40% at center);
+            background-color: $p_color2;
+        }
+    }
+}
+
+.h5{
+    size: 12px;
+}

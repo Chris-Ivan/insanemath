@@ -1,0 +1,98 @@
+function statistikaSDSMP(level){
+    let operasi = ["mean","median","modus","std_dev","ragam"]
+    let arrayStat = []
+    let banyak_operasi = (level==="SD"?2:4)
+    let pilihanop = Math.floor(Math.random() * (banyak_operasi+1))
+    let banyakangka = (level==="SD"?5:8)
+    let temp
+    let Jumlah = 0
+    for (let i = 0; i<banyakangka; i++) {
+        temp = Math.floor(Math.random() * banyakangka)+1
+        arrayStat.push(temp)
+        Jumlah+=temp
+    }
+    let avg
+    let total = 0
+    console.log(arrayStat.sort())
+    switch (operasi[pilihanop]) {
+        case "mean":
+            let mean = Jumlah/(arrayStat.length)
+            console.log(`${operasi[pilihanop]},${mean}`)
+            return mean
+            break;
+        case "median":
+            let median
+            if(level==="SD"){
+                median = arrayStat[2]}
+            else{
+                median = (arrayStat[3]+arrayStat[4])/2
+            }
+            console.log(`${operasi[pilihanop]},${median}`)
+            return median
+            break;
+        case "modus":
+            let counter=[0,0,0,0,0,0,0,0]
+            for (let i = 0; i<banyakangka; i++) {
+                counter[arrayStat[i]-1]+=1
+            }
+            let maks=1
+            let imaks=0
+            let nilaimaks = 1
+            let modus = ""
+            for (let i = 0; i<banyakangka; i++) {
+                if (counter[i]>maks){imaks=i;nilaimaks=counter[i]}
+            }
+            let countmax = 0
+            for (let i = 0; i<banyakangka; i++) {
+                if (counter[i]===nilaimaks){countmax+=1}
+            }
+            console.log(counter)
+            if (countmax!==1){modus="tidak ada jawaban"}
+            else{modus=imaks+1}
+            console.log(`${operasi[pilihanop]},${modus}`)
+            break;
+        case "std_dev":
+            avg = Jumlah/(banyakangka-1)
+            for (let i = 0; i<banyakangka; i++) {
+                total+=Math.pow((arrayStat[i]-avg),2)
+            }
+            let std = (Math.pow(total/(arrayStat.length-1),0.5)).toFixed(2)
+            console.log(`${operasi[pilihanop]},${std}`)
+            break;
+        case "ragam":
+            avg = Jumlah/(banyakangka-1)
+            for (let i = 0; i<banyakangka; i++) {
+                total+=Math.pow((arrayStat[i]-avg),2)
+            }
+            let rag = (total/(arrayStat.length-1)).toFixed(2)
+            console.log(`${operasi[pilihanop]},${rag}`)
+            break;
+        default:
+            break;
+    }
+}
+
+function KPK(num1,num2){
+    let i = 1;
+    while(((i%num1)!==0) || ((i%num2)!==0)){
+        i+=1;
+    }
+    console.log(`${num1},${num2}, ${i}`)
+    return i
+}
+
+function FPB(fac1,fac2){
+    let min = fac1
+    if (fac2<fac1){min=fac2}
+    for (let i = min; i > 1; i--) {
+        if ((fac1%i==0)&&(fac2%i==0)){
+            console.log(i)
+            return i
+        }
+    }
+}
+
+function persen(decimal,frac){
+    total = ((decimal+frac)*100).toFixed(2)
+    console.log(`${decimal}+${frac} = ${total}%`)
+    }

@@ -1,0 +1,7 @@
+DAFTAR FUNGSI yg perlu gambar
+similarity (SMP)
+    segitiga: [soal,jawaban,"triangle-sim"]
+    trapesium: [soal,jawaban,"trapezoid-sim"]
+    segitiga kebalik: [soal,jawaban,"flipped-sim"]
+point2line (SMA)
+    semuanya [soal,hasil,"kubus"]
